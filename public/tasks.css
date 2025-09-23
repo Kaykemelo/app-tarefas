@@ -1,0 +1,12 @@
+.header-tarefa {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
