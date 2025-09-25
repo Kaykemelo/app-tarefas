@@ -18,7 +18,7 @@ class TaskSeeder extends Seeder
                 'description' => 'Estudar pela manhã'
             ],
             [ 
-                'description' => 'Ir a cademia pela manhã'
+                'description' => 'Ir a Academia pela manhã'
             ],
             [
                 'description' => 'Almoçar'
