@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Task\CreateRequest;
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Exception;
 
 class TaskController extends Controller
 {
@@ -14,7 +15,7 @@ class TaskController extends Controller
         $aTasks = Task::all()->toArray();
         
         //dd($aTasks);
-        return view('tasks', ['aTasks' => $aTasks]);
+        return view('Task/index', ['aTasks' => $aTasks]);
     }
 
     public function show($id) 
@@ -28,17 +29,18 @@ class TaskController extends Controller
 
     public function create()
     {
-        return view('taskcreate');
+        return view('Task/create');
     }
 
     public function store(CreateRequest $request)
     {
         
-        $validated = $request->validated();
-        
-        Task::create($validated); 
+            $validated = $request->validated();
 
-        return back(); 
+            Task::create($validated); 
+
+            return back()->with('sucess', 'Tarefa criada com sucesso!');
+
     }
 
 }

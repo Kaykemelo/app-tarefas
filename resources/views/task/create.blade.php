@@ -20,27 +20,34 @@
     <main class="container">
         <div class="formulario">
             <div class="form-tasks"> 
-                <form action="/Tasks/taskinsert" method="post">
+                @if (session('sucess'))
+                    <p class="msg-sucess">{{ session('sucess') }}</p>
+                @endif
+
+               
+                <form action="/Tasks/task-insert" method="post">
                     @csrf
                     <label for="task">Tarefa:</label><br>
-                    <input type="text" id="task-input" name="description" @error('description') is-invalid @enderror><br>
+                    <input type="text" id="task-input" name="description" value="{{ old('description') }}"><br>
+
                     @error('description')
-                        <p class="error invalid-feedback">{{$message}}</p>
+                        <p class="msg-error">{{ $message }}</p>
                     @enderror
 
                     <label for="status">Status:</label><br> 
-                    <select name="status_id" @error('status') is-invalid @enderror>
+                    <select name="status_id" value="{{ old('status_id')}}">
                         <option value="">Selecione:</option>
                         <option value="1">Pendente</option>
                         <option value="2">Concluida</option>
                     </select>
-                    @error('status') 
-                        <p class="error invalid-feedback">{{$message}}</p>
+
+                    @error('status_id')
+                        <p class="msg-error">{{ $message }}</p>
                     @enderror    
-            
+        
                     <div class="botao">
                         <button type="submit" class="botao-enviar">Enviar</button>
-                        <a href="Tasks/task">Voltar</a> 
+                        <a href="{{'/Tasks/task'}}">Voltar</a> 
                     </div>
             
                 </form>

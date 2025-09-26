@@ -38,10 +38,23 @@ body {
     padding: 20px;
 }
 
+.msg-sucess {
+    font-family: "Open Sans",sans-serif;
+    font-size: 15px;
+    color: rgb(2, 89, 2);
+}
+
+.msg-error {
+    font-family: "Open Sans",sans-serif;
+    font-size: 15px;
+    color: rgb(184, 0, 0);
+}
+
 .form-tasks label {
     font-size: 14px;
     margin-bottom: 2px;
     font-family: "Open Sans",sans-serif;
+    font-weight: 600;
 }
 
 .form-tasks input {
@@ -49,7 +62,7 @@ body {
     margin-bottom: 15px;
     border-radius: 2px;
     border:1px solid grey;
-    padding: 2px;
+    padding: 3px;
     font-family: "Roboto",sans-serif;
 }
 
@@ -57,7 +70,7 @@ body {
     margin-bottom: 15px;
     width: 255px;
     border: 1px solid grey;
-    padding: 2px;
+    padding: 3px;
     border-radius: 2px;
 }
 

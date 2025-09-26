@@ -16,7 +16,7 @@
         <h2>Lista de Tarefas</h2>
 
         <!-- Exemplo de link -->
-        <a href="{{('/task-insert')}}">+ Nova Tarefa</a>
+        <a href="{{('taskcreate')}}">+ Nova Tarefa</a>
 
     </header>
 

@@ -20,5 +20,5 @@ Route::prefix('Tasks')->group( function () {
     Route::get('/task', [TaskController::class , 'index']);
     Route::get('/taskbyid/{id}', [TaskController::class, 'show']);
     Route::get('/taskcreate', [TaskController::class, 'create']);
-    Route::post('/taskinsert',[TaskController::class, 'store']);
+    Route::post('/task-insert',[TaskController::class, 'store']);
 });
