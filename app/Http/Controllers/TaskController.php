@@ -18,15 +18,6 @@ class TaskController extends Controller
         return view('Task/index', ['aTasks' => $aTasks]);
     }
 
-    public function show($id) 
-    {
-        $task = Task::where('id', $id)->get()->toArray();
-        //dd($task);
-
-        return view('taskbyid', ['task' => $task]); 
-        
-    }
-
     public function create()
     {
         return view('Task/create');
@@ -34,7 +25,7 @@ class TaskController extends Controller
 
     public function store(CreateRequest $request)
     {
-        
+
             $validated = $request->validated();
 
             Task::create($validated); 
@@ -43,4 +34,10 @@ class TaskController extends Controller
 
     }
 
+    public function edit($id)
+    {
+        $task = Task::find($id)->toArray();
+
+        return view('Task/edit', ['task' => $task]);
+    }
 }

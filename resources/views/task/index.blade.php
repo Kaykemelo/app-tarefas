@@ -39,7 +39,7 @@
                                 <td>{{$task['id']}}</td>
                                 <td>{{$task['description']}}</td>
                                 <td>{{$task['status_id']}}</td>
-                                <td><a href="{{('/task-update/'.$task['id'])}}" class="botao botao-editar">Editar</a></td>
+                                <td><a href="{{ route('task.edit', $task['id'])}}" class="botao botao-editar">Editar</a></td>
                                 <td><a href="{{('/tasks-delete/'.$task['id'])}}" class="botao botao-excluir">Excluir</a></td>
                             </tr>
                         @endforeach                                                          
