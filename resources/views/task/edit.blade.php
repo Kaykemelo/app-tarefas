@@ -20,22 +20,31 @@
     <main class="container">
         <div class="formulario">
             <div class="form-tasks"> 
-            
-                <form action="" method="post">
+                @if (session('sucess'))
+                    <p class="msg-update">{{session('sucess')}}</p>
+                @endif
+
+                <form action="{{ Route('task-update', $task['id']) }}" method="post">
+                
                     @csrf
 
                     <input type="hidden" name="id" value="{{ $task['id'] }}">
                     <label for="task">Tarefa:</label><br>
-                    <input type="text" id="task-input" name="description" value=""><br>
+                    <input type="text" id="task-input" name="description" value="{{ $task['description'] }}" @error('description') is-invalid @enderror><br>
 
-                   
+                    @error('description')
+                        <p class="msg-erro">{{ $message }}</p>
+                    @enderror
 
                     <label for="status">Status:</label><br> 
-                    <select name="status_id" value="">
+                    <select name="status_id" @error('status') is-invalid @enderror>
                         <option value="">Selecione:</option>
-                        <option value="1">Pendente</option>
-                        <option value="2">Concluida</option>
+                        <option value="1" {{ ($task['status_id'] == 1) ? 'selected' : ''}}>Pendente</option>
+                        <option value="2" {{ ($task['status_id'] == 2) ? 'selected' : ''}}>Concluida</option>
                     </select>
+                    @error('status')
+                        <p class="msg-erro">{{ $message }}</p>
+                    @enderror    
 
                     <div class="botao">
                         <button type="submit" class="botao-enviar">Enviar</button>

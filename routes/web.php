@@ -21,4 +21,5 @@ Route::prefix('Tasks')->group( function () {
     Route::get('/taskcreate', [TaskController::class, 'create']);
     Route::post('/task-insert',[TaskController::class, 'store']);
     Route::get('/task-edit/{id}', [TaskController::class, 'edit'])->name('task.edit');
+    Route::post('/task-update/{task}', [TaskController::class, 'update'])->name('task-update');
 });

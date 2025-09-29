@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Task\CreateRequest;
+use App\Http\Requests\Task\UpdateRequest;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use Exception;
@@ -37,7 +38,17 @@ class TaskController extends Controller
     public function edit($id)
     {
         $task = Task::find($id)->toArray();
-
+    
         return view('Task/edit', ['task' => $task]);
+    }
+
+    public function update(UpdateRequest $request, Task $task)
+    {
+        
+        $validated = $request->validated();
+    
+        $task->update($validated);
+    
+        return back()->with('sucess', 'Tarefa alterada com sucesso!');
     }
 }

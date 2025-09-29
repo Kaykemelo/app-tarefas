@@ -29,6 +29,15 @@ body {
     padding: 40px 0;
 }
 
+.msg-update {
+    font-family: 'Open Sans',sans-serif;
+    color: rgb(2, 87, 2);
+}
+
+.msg-erro {
+    font-family: "Open Sans",sans-serif;
+    color: rgb(168, 4, 4);
+}
 .formulario {
     background-color: #fff;
     border-radius: 6px;
