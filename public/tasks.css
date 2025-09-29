@@ -54,6 +54,12 @@ body {
     padding: 40px 24px;
 }
 
+.msg-delete {
+    font-family: "Open Sans",sans-serif;
+    color: #1e8449;
+}
+
+
 .tabela-tasks {
     border-collapse: collapse;
     width: 90%;

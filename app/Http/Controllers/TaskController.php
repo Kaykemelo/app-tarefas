@@ -51,4 +51,11 @@ class TaskController extends Controller
     
         return back()->with('sucess', 'Tarefa alterada com sucesso!');
     }
+
+    public function destroy (Task $task)
+    {
+        $task->delete();
+
+        return back()->with('sucess', 'Tarefa excluida com sucesso!'); 
+    }
 }

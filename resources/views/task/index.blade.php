@@ -22,7 +22,10 @@
 
     <main class="container">
         <div class="tabela">
-        
+            @if (session('sucess'))
+                <p class="msg-delete">{{ session('sucess') }}</p>
+            @endif
+                
             <table class="tabela-tasks">
                  <thead class="tabela-cabeçalho">
                     <tr>
@@ -40,7 +43,15 @@
                                 <td>{{$task['description']}}</td>
                                 <td>{{$task['status_id']}}</td>
                                 <td><a href="{{ route('task.edit', $task['id'])}}" class="botao botao-editar">Editar</a></td>
-                                <td><a href="{{('/tasks-delete/'.$task['id'])}}" class="botao botao-excluir">Excluir</a></td>
+                                <td>
+                                <a href="{{( route('task-delete', $task['id']))}}" onclick="event.preventDefault(); document.getElementById('form-delete-{{ $task['id'] }}').submit();" class="botao botao-excluir">Excluir</a>
+                                
+                                <form action="{{ route('task-delete', $task['id']) }}" id="form-delete-{{ $task['id'] }}" class="d-none" method="post">  
+                                @csrf
+                                @method('POST')
+                                </form>
+                                
+                                </td>
                             </tr>
                         @endforeach                                                          
             
