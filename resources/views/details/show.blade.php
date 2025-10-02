@@ -16,7 +16,7 @@
         <h2>Detalhes da Tarefa</h2>
 
         <!-- Exemplo de link -->
-        <a href="{{--('detailcreate')--}}">+ Novo Detalhe</a>
+        <a href="{{ Route('details-create', $aDetails['task']['id']) }}">+ Novo Detalhe</a>
 
     </header>
 
@@ -34,16 +34,14 @@
 
                  </thead>
                     <tbody class="tabela-corpo">
-                        @foreach ($aDetails as $details)
                             <tr>
-                                <td>{{$details['id']}}</td>
-                                <td>{{$details['task']['description']}}</td>
-                                <td>{{$details['description']}}</td>
+                                <td>{{$aDetails['id']}}</td>
+                                <td>{{$aDetails['task']['description']}}</td>
+                                <td>{{$aDetails['description']}}</td>
                                 <td>
-                                    <a href="{{--('detail-edit)--}}" class=" botao botao-editar">Editar</a>    
+                                    <a href="{{ Route('detail-edit', $aDetails['id']) }}" class=" botao botao-editar">Editar</a>    
                                 </td>
                             </tr>
-                        @endforeach                                          
             
                     </tbody>
                 </table>

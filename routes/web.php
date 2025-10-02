@@ -24,6 +24,14 @@ Route::prefix('Tasks')->group( function () {
     Route::get('/task-edit/{id}', [TaskController::class, 'edit'])->name('task.edit');
     Route::post('/task-update/{task}', [TaskController::class, 'update'])->name('task-update');
     Route::post('/task-delete/{task}', [TaskController::class, 'destroy'])->name('task-delete');
-    Route::get('/task-details/{id}', [DetailsTaskController::class, 'show']);
     
+});
+
+Route::prefix('task-details')->group( function () {
+
+    Route::get('/details/{id}', [DetailsTaskController::class, 'show'])->name('details');
+    Route::get('/details-create/{taskid}', [DetailsTaskController::class, 'create'])->name('details-create');
+    Route::post('/details-insert', [DetailsTaskController::class, 'store'])->name('detail-insert');
+    Route::get('/details-edit/{id}', [DetailsTaskController::class, 'edit'])->name('detail-edit');
+    Route::post('details-update/{details}', [DetailsTaskController::class, 'update'])->name('detail-update');
 });

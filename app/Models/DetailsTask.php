@@ -9,6 +9,8 @@ class DetailsTask extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['task_id', 'description'];
+
     protected $table = 'details_task';
 
     public function task() 
