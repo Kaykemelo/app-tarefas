@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DetailsTaskController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
@@ -23,5 +24,6 @@ Route::prefix('Tasks')->group( function () {
     Route::get('/task-edit/{id}', [TaskController::class, 'edit'])->name('task.edit');
     Route::post('/task-update/{task}', [TaskController::class, 'update'])->name('task-update');
     Route::post('/task-delete/{task}', [TaskController::class, 'destroy'])->name('task-delete');
+    Route::get('/task-details/{id}', [DetailsTaskController::class, 'show']);
     
 });

@@ -13,5 +13,8 @@ class Task extends Model
 
     protected $fillable = ['description', 'status_id']; 
 
-    
+    public function DetailsTask()
+    {
+        return $this->hasOne(DetailsTask::class);
+    }
 }
