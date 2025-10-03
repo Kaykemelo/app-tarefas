@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DetailsTaskController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TesteController;
@@ -35,3 +36,5 @@ Route::prefix('task-details')->group( function () {
     Route::get('/details-edit/{id}', [DetailsTaskController::class, 'edit'])->name('detail-edit');
     Route::post('details-update/{details}', [DetailsTaskController::class, 'update'])->name('detail-update');
 });
+
+Route::get('/categorys', [CategoryController::class, 'index']);
