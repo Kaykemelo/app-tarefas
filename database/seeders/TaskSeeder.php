@@ -15,13 +15,16 @@ class TaskSeeder extends Seeder
     {
         $aTask = [
             [
-                'description' => 'Estudar pela manhã'
+                'description' => 'Estudar pela manhã',
+                'category_id' => 2
             ],
             [ 
-                'description' => 'Ir a Academia pela manhã'
+                'description' => 'Ir a Academia pela manhã',
+                'category_id' => 1
             ],
             [
-                'description' => 'Almoçar'
+                'description' => 'Almoçar',
+                'category_id' => 1
             ]
 
         ];

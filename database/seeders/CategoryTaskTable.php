@@ -17,23 +17,20 @@ class CategoryTaskTable extends Seeder
         $aCategorysTasks = [
             [
                 'category_id' => 1,
-                'task_id' => 5
+                'task_id' => 2
             ],
 
             [
                 'category_id' => 1,
-                'task_id' => 7
+                'task_id' => 3
             ],
 
             [
                 'category_id' => 2,
-                'task_id' => 4
+                'task_id' => 1
             ],
 
-            [
-                'category_id' => 2,
-                'task_id' => 8
-            ]
+         
         ];
 
         foreach ($aCategorysTasks as $categoryTask) {

@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('description');
             $table->unsignedBigInteger('status_id')->default(1);
+            $table->unsignedBigInteger('category_id');
             $table->foreign('status_id')->references('id')->on('statuses');
+            $table->foreign('category_id')->references('id')->on('category');
             $table->timestamps();
         });
     }

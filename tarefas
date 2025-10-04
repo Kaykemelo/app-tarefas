@@ -1,0 +1,30 @@
+criação do relacionamento hasonethrough 
+
+categorias- tarefas - detalhes / uma categoria tem um detalhe atraves da tarefa 
+
+Migration 
+- incluir o campo do id da categoria na tabela de tarefas ----- ok 
+- fk-references-id-tabela ------ ok 
+- rodar a migration de novo  (migrate: fresh )    
+
+Seeder 
+- criar uma nova seeder pra popular o id da categoria na tabela de tarefas (make:seeder) ------ ok 
+- passar o id da categoria no array pra popular ['category_id' ] ------- ok 
+- rodar a nova seeder (db:seeder) ------- ok 
+
+ Model 
+- criar os relacionamentos das tabelas 
+- categoria com detalhes atraves de tarefa (hasonethrough) ------ ok 
+- categoria com tarefa (hasone - belongsto)
+
+Controller 
+- criar um novo metodo na controller de categorias pra buscar o relacionamento das 3 tabelas  (index)
+- buscar os dados relacionados 
+
+View 
+- criar uma pagina pra exibir os dados relacionados 
+- criar novo css pra estilização da tabela relacionada 
+
+rotas 
+- criar uma rota pro caminho da nova pagina criada (category-detail)
+- chamar o metodo e classe da controller responsavel pela ação 

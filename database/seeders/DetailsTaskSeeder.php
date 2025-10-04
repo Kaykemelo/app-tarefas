@@ -18,19 +18,19 @@ class DetailsTaskSeeder extends Seeder
             [
                 'description' => 'Estudar 4 Horas',
 
-                'task_id' => 4
+                'task_id' => 1
             ],
 
             [
                 'description' => 'Treinar Perna',
 
-                'task_id' => 5
+                'task_id' => 2
             ],
 
             [
                 'description' => 'Comer Proteina',
 
-                'task_id' => 6
+                'task_id' => 3 
             ]
         ];
 
