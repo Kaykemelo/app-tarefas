@@ -23,4 +23,11 @@ class CategoryController extends Controller
 
         return view('categorys/details', compact('categoryDetail'));
     }
+
+    public function detailsCategory()
+    {
+        $detailsCategory = Category::with('DetailsThroughTasks')->get();
+
+        return view('categorys/many-details', compact('detailsCategory'));
+    }
 }

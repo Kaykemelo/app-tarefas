@@ -40,3 +40,5 @@ Route::prefix('task-details')->group( function () {
 Route::get('/categorys', [CategoryController::class, 'index']);
 
 Route::get('/category-detail', [CategoryController::class, 'categoryDetail']);
+
+Route::get('/categorys-details', [CategoryController::class, 'detailsCategory']);
