@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 
 class Category extends Model
@@ -23,5 +24,8 @@ class Category extends Model
         return $this->hasOneThrough(DetailsTask::class, Task::class );   
     }
 
-
+    public function taskForDetail() : HasOne
+    {
+        return $this->hasOne(Task::class);
+    }
 }

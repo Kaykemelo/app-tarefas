@@ -15,4 +15,12 @@ class CategoryController extends Controller
 
         return view('categorys/index', [ 'categorys' => $categorys]);
     }
+
+
+    public function categoryDetail()
+    {
+        $categoryDetail = Category::with('details')->get();
+
+        return view('categorys/details', compact('categoryDetail'));
+    }
 }
