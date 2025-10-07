@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CostumersController;
 use App\Http\Controllers\DetailsTaskController;
+use App\Http\Controllers\StoresController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TesteController;
 use Illuminate\Support\Facades\Route;
@@ -42,3 +44,7 @@ Route::get('/categorys', [CategoryController::class, 'index']);
 Route::get('/category-detail', [CategoryController::class, 'categoryDetail']);
 
 Route::get('/categorys-details', [CategoryController::class, 'detailsCategory']);
+
+Route::get('/costumer', [CostumersController::class, 'index']);
+
+Route::get('/stores', [StoresController::class, 'index']);
