@@ -20,4 +20,11 @@ class StoresController extends Controller
 
         return view('store/notes', compact('storeNotes'));
     }
+
+    public function getShowTools($id) 
+    {
+        $storeTools = Stores::with('tools')->find($id);
+
+        return view('store/tools', compact('storeTools'));
+    }
 }

@@ -52,3 +52,7 @@ Route::get('/stores', [StoresController::class, 'index']);
 Route::get('costumers-notes/{id}', [CostumersController::class, 'showNotes']);
 
 Route::get('stores-notes/{id}',[StoresController::class, 'showNotes']);
+
+Route::get('costumer-tools/{id}', [CostumersController::class , 'getShowTools']);
+
+Route::get('stores-tools/{id}',[StoresController::class , 'getShowTools']);

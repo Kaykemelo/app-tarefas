@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Costumers extends Model
 {
@@ -19,5 +20,10 @@ class Costumers extends Model
     public function notes() : MorphMany
     {
         return $this->morphMany(Notes::class, 'notable');
+    }
+
+    public function tools() : MorphToMany
+    {
+        return $this->morphToMany(Tool::class, 'toolable');
     }
 }

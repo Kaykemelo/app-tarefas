@@ -20,4 +20,11 @@ class CostumersController extends Controller
 
         return view('costumer/notes', compact('costumerNotes'));
     }
+
+    public function getShowTools($id)
+    {
+        $costumerTools = Costumers::with('tools')->find($id);
+
+        return view('costumer/tools', compact('costumerTools'));
+    }
 } 
