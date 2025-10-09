@@ -13,4 +13,11 @@ class CostumersController extends Controller
 
         return view('costumer/index', compact('aCostumer')); 
     }
+
+    public function showNotes($id)
+    {
+        $costumerNotes = Costumers::with('notes')->find($id);
+
+        return view('costumer/notes', compact('costumerNotes'));
+    }
 } 

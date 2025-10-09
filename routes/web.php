@@ -48,3 +48,7 @@ Route::get('/categorys-details', [CategoryController::class, 'detailsCategory'])
 Route::get('/costumer', [CostumersController::class, 'index']);
 
 Route::get('/stores', [StoresController::class, 'index']);
+
+Route::get('costumers-notes/{id}', [CostumersController::class, 'showNotes']);
+
+Route::get('stores-notes/{id}',[StoresController::class, 'showNotes']);

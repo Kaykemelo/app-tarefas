@@ -13,4 +13,11 @@ class StoresController extends Controller
 
         return view('store/index', compact('aStores'));
     }
+
+    public function showNotes($id)
+    {
+        $storeNotes = Stores::with('notes')->find($id);
+
+        return view('store/notes', compact('storeNotes'));
+    }
 }
